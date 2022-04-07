@@ -1,0 +1,10 @@
+<form class="form" method="post">
+    {% csrf_token%} 
+    {{ form.as_p}}
+
+    <h1><center>Sesión cerrada correctamente</center></h1>
+
+    <button type="submit" id="submit">Volver al inicio</button>
+
+
+</form>
