@@ -114,7 +114,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'login'
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -122,6 +123,10 @@ LOGIN_REDIRECT_URL = 'index'
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'Proyecto_01/static'),
+
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
