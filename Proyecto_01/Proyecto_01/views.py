@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from django.contrib.auth.models import User
+from urllib.request import urlopen
+import json
+
 
 def register(request):
     if request.method == "POST":
@@ -14,3 +17,12 @@ def register(request):
 
     context = { 'form': form}
     return render(request, 'register.html', context)
+
+def digimonApi(request):
+    url = "https://digimon-api.vercel.app/api/digimon"
+
+    response = urlopen(url)
+    data = json.loads(response.read())
+
+    context = { 'data': data}
+    return render(request, 'index.html', context)

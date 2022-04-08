@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <div id="login">  
+        <h3 class="text-center text-white pt-5">Su usuario es: {{ user.username }}</</h3>
+        <br>
+        <a href="{% url 'logout' %}">Logout</a>
+  {% endif %}
+    {% for d in data %}
+        <H1>{{d.name}}</H1> 
+        <img src="{{d.img}}">
+    {% endfor %}
+</body>
+</html>
