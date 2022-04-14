@@ -20,9 +20,8 @@ def register(request):
 
 def digimonApi(request):
     url = "https://www.freetogame.com/api/games?platform=pc"
-
     response = urlopen(url)
     data = json.loads(response.read())
     context = { 'data': data}
-    print (data)
+    
     return render(request, 'index.html', context)
