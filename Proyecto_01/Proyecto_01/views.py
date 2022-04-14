@@ -19,10 +19,9 @@ def register(request):
     return render(request, 'register.html', context)
 
 def digimonApi(request):
-    url = "https://digimon-api.vercel.app/api/digimon"
+    url = "https://www.freetogame.com/api/games?platform=pc"
 
     response = urlopen(url)
     data = json.loads(response.read())
-
     context = { 'data': data}
     return render(request, 'index.html', context)

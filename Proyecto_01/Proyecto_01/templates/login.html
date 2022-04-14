@@ -7,11 +7,13 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
-    {% if request.user.is_authenticated %}
-        <div id="login">  
-            <h3 class="text-center text-white pt-5">Su usuario es: {{ user.username }}</</h3>
+    {% if request.user.is_authenticated %} 
+        <div class="username">
+            <h1>Su usuario es: {{ user.username }}</</h1>
             <br>
             <a href="{% url 'logout' %}">Logout</a>
+        </div>
+
     {% else %}
     <div id="login">  
         <h3 class="text-center text-white pt-5">Iniciar sesión</h3>

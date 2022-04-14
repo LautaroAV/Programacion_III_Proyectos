@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
-    {% if request.user.is_authenticated %}
-    <div id="login">  
-        <h3 class="text-center text-white pt-5">Su usuario es: {{ user.username }}</</h3>
-        <br>
-        <a href="{% url 'logout' %}">Logout</a>
-  {% endif %}
-    {% for d in data %}
-        <H1>{{d.name}}</H1> 
-        <img src="{{d.img}}">
-    {% endfor %}
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+{%for d in data%}
+
+
+
+<article>
+    <div class="container-article"> 
+        <div>
+            {% if request.user.is_authenticated %} 
+            <i class="clock"></i>
+            {%endif%}
+            <br>
+            <div class="post"><h2>{{d.title}}</h2></div>
+            <br><br><br>
+            <div class="post">{{d.short_description}}</div>
+        </div>
+    </div>
+            <img class='post_img'src="{{d.thumbnail}}">
+            <br><br><br>
+
+</article>
+
+
+{% endfor %}
+
+{% endblock %}
