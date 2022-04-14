@@ -2,10 +2,9 @@
 {% load static %}
 <html>
 <head>
-	<title>Primer Tp</title>
+	<title>TRABAJO DJANGO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-	<!-- <link rel="stylesheet" type="text/css" href="{% static 'normalize.css'%}"> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'index.css'%}">
 
 </head>
@@ -13,14 +12,12 @@
 
 	<header class="main-head">
 		<nav class="main">
-			<h1 id="logo">Primer TP django</h1>
+			<h1 id="logo">TRABAJO DJANGO</h1>
 			<ul>
 				{% if request.user.is_authenticated %}
-				<li><a href="{% url 'logout' %}">Logout</a></li>
-				{% else %}
 				
-				<li><a href="{% url 'login' %}">Login</a></li>
-				<li><a href="{% url 'register' %}">Register</a></li>
+                <li><a>User: {{user.username}}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
 				{% endif %}
 
 			</ul>
@@ -28,20 +25,12 @@
 	</header>
 
 	<!-------------------------------------
-					Messages 
-	-------------------------------------->
-	{% if messages %}
-		{% for message in messages%}
-		<div class ="notification {{message.tags}}">
-			{{message}}
-		</div>
-		{% endfor%}
-	{% endif%}
-	<!-------------------------------------
 					Navigation Bar 
 	-------------------------------------->
 	<div class="main">
-		
+        <nav class="second-nav">
+            <a class="feed" href="{% url 'index' %}">Inicio</a>
+        </nav>
 
 
 		{% block content %}

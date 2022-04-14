@@ -24,4 +24,5 @@ def digimonApi(request):
     response = urlopen(url)
     data = json.loads(response.read())
     context = { 'data': data}
+    print (data)
     return render(request, 'index.html', context)
