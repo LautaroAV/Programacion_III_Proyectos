@@ -18,7 +18,7 @@ def register(request):
     context = { 'form': form}
     return render(request, 'register.html', context)
 
-def digimonApi(request):
+def GamesApi(request):
     url = "https://www.freetogame.com/api/games?platform=pc"
     response = urlopen(url)
     data = json.loads(response.read())
