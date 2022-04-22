@@ -8,9 +8,11 @@
 
 <body>
     {% if request.user.is_authenticated %} 
-        <div class="username">
-            <h1>Su usuario es: {{ user.username }}</</h1>
+        <div>
+            <h3>Su usuario es: {{ user.username }}</h3>
             <br>
+        </div>
+        <div>
             <a href="{% url 'logout' %}">Logout</a>
         </div>
 
