@@ -18,10 +18,23 @@ def register(request):
     context = { 'form': form}
     return render(request, 'register.html', context)
 
-def DigimonApi(request):
-    url = "https://digimon-api.vercel.app/api/digimon"
+def MakeUpApi(request):
+    url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type=Blush"
 
     response = urlopen(url)
     data = json.loads(response.read())
     context = { 'data': data}
     return render(request, 'index.html', context)
+
+def MakeupApiTag(request,tag):
+    devolver_tag_list = []
+    url = "http://makeup-api.herokuapp.com/api/v1/products.json?product_type=Blush"
+    response = urlopen(url)
+    data = json.loads(response.read())
+    for i in data:
+        for k in i["tag_list"]:
+            if k == tag:
+                devolver_tag = i
+                devolver_tag_list.append(devolver_tag)
+                context = { 'devolver_tag': devolver_tag_list}
+    return render(request, 'index_tag.html', context)

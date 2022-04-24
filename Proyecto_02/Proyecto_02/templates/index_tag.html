@@ -23,14 +23,14 @@
          </div>
          <div class="portfolio-menu mt-2 mb-4">
             <ul>
-                <li class="btn btn-outline-dark active" data-filter="*"><a href="{% url 'index' %}">Todo</a></li>
-                <li class="btn btn-outline-dark" data-filter=".gts"><a href="Vegan">Vegan</a></li>
-                <li class="btn btn-outline-dark" data-filter=".gts"><a href="Canadian">Canadian</a></li>
-                <li class="btn btn-outline-dark" data-filter=".gts"><a href="Natural">Natural</a></li>
+               <li class="btn btn-outline-dark active" data-filter="*"><a href="{% url 'index' %}">Todo</a></li>
+               <li class="btn btn-outline-dark" data-filter=".gts"><a href="Vegan">Vegan</a></li>
+               <li class="btn btn-outline-dark" data-filter=".gts"><a href="Canadian">Canadian</a></li>
+               <li class="btn btn-outline-dark" data-filter=".gts"><a href="Natural">Natural</a></li>
             </ul>
          </div>
          <div class="portfolio-item row">
-         {% for d in data%}
+            {% for d in devolver_tag%}
             <div class="item selfie col-lg-3 col-md-4 col-6 col-sm">
                 <a>{{d.name}}</a>
                <img class="img-fluid" src="{{d.image_link}}" alt="">
