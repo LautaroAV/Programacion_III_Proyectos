@@ -23,6 +23,7 @@ urlpatterns = [
     path('', LoginView.as_view(template_name='login.html'), name="login"),
     path('logout/', LogoutView.as_view(template_name='logout.html'), name="logout"),
     path('register/', views.register, name ="register"),
-    path('index/', views.MakeUpApi, name ="index"),
-    path('index/<tag>',views.MakeupApiTag, name="index_tag"),
+    path('index/', views.MakeUpApiAll, name ="index"),
+    path('index/<type_p>', views.MakeUpApi, name ="index_tipo"),
+    path('index/<type_p>/<tag>',views.MakeupApiTag, name="index_tipo_tag"),
 ]

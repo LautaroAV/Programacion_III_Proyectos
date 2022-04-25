@@ -121,7 +121,7 @@ LOGIN_REDIRECT_URL = 'index'
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'Proyecto_01/static'),
+    os.path.join(BASE_DIR, 'Proyecto_02/static'),
 
 )
 
