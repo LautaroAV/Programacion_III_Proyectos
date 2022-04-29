@@ -18,10 +18,28 @@ def register(request):
     context = { 'form': form}
     return render(request, 'register.html', context)
 
-def GamesApi(request):
-    url = "https://www.freetogame.com/api/games?platform=pc"
+def DigimonApi(request):
+    url = "https://digimon-api.vercel.app/api/digimon"
     response = urlopen(url)
     data = json.loads(response.read())
     context = { 'data': data}
     
     return render(request, 'index.html', context)
+
+def searchDigimonAPi(request):
+
+    succesDigimon = []
+
+    if request.method == 'POST':
+        search = request.POST.get('Search').lower()
+
+        URL = 'https://digimon-api.vercel.app/api/digimon/name' #configuramos la url
+
+        data = requests.get(URL) #solicitamos la información y guardamos la respuesta en data.
+
+        data = data.json() #convertimos la respuesta en dict
+        for d in data:
+            if search in d['name'].lower():
+                succesDigimon.append(d)
+
+    return render(request,'index.html',{'data':succesDigimon})
