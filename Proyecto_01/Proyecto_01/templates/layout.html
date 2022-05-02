@@ -12,7 +12,7 @@
 
 	<header class="main-head">
 		<nav class="main">
-			<h1 id="logo">TRABAJO DJANGO</h1>
+			<h1 id="logo">Digimon API</h1>
 			<ul>
 				{% if request.user.is_authenticated %}
 				
@@ -32,12 +32,9 @@
             <a class="feed" href="{% url 'index' %}">Inicio</a>
         </nav>
 
-
 		{% block content %}
 
 		{% endblock content %}
-
-
 
 	</div>
 

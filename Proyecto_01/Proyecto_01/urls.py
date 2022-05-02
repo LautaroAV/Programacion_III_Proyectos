@@ -23,5 +23,6 @@ urlpatterns = [
     path('', LoginView.as_view(template_name='login.html'), name="login"),
     path('logout/', LogoutView.as_view(template_name='logout.html'), name="logout"),
     path('register/', views.register, name ="register"),
-    path('index/', views.GamesApi, name ="index"),
+    path('index/', views.DigimonApi, name ="index"),
+    path('search/',views.searchDigimonAPi, name="search")
 ]
