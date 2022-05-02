@@ -2,16 +2,6 @@
 {% block content %}
 {%for d in data%}
 
-<div class="container">
-    <h1 class="h1 mt-3">Buscador de juegos: </h1>
-    <form class="d-flex pt-4" method='POST'>
-        {% csrf_token %}
-        <input class="" type="search" placeholder="Buscar" name='Search' aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
-<hr/>
-</div>
-
 <article>
     <div class="container-article"> 
         <div>
@@ -19,9 +9,9 @@
             <i class="clock"></i>
             {%endif%}
             <br>
-            <div class="post"><h2>{{d.name}}</h2></div>
+            <div class="post"><h1>{{d.name}}</h1></div>
             <br><br>
-            <div>Nivel: {{d.level}}</div>
+            <div><h2>Nivel: {{d.level}}</h2></div>
         </div>
     </div>
             <img class='post_img'src="{{d.img}}">

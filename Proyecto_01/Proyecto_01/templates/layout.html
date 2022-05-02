@@ -12,7 +12,7 @@
 
 	<header class="main-head">
 		<nav class="main">
-			<h1 id="logo">Digimon API</h1>
+			<h1 id="logo">DIGIMON API</h1>
 			<ul>
 				{% if request.user.is_authenticated %}
 				
@@ -30,7 +30,13 @@
 	<div class="main">
         <nav class="second-nav">
             <a class="feed" href="{% url 'index' %}">Inicio</a>
+			<form class="d-flex pt-4" method='POST' action="{% url 'search' %}">
+				{% csrf_token %}
+				<input class="" type="search" placeholder="Buscar" name='Search' aria-label="Search">
+				<button class="btn btn-outline-success" type="submit">Buscar</button>
+			</form>
         </nav>
+		
 
 		{% block content %}
 
